@@ -1,4 +1,9 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { version } from './package.json'
 export default defineNuxtConfig({
-  devtools: { enabled: true }
+  runtimeConfig: {
+    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+    public: {
+      version
+    }
+  }
 })
