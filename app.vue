@@ -1,42 +1,18 @@
 <template>
   <div>
-    <button @click="SendEmail">Send Email</button>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
   </div>
 </template>
-
-<script setup>
-const SendEmail = async () => {
- let msg = {
-  "personalizations": [
-   {
-    to: [
-     {
-      email: "irakli@foodticket.nl",
-      name: "irakli"
-     }
-    ] 
-   }
-  ],
-  "from": {
-   email: "iraklitbz@gmail.com",
-   name: "Reconquista"
-  },
-  "subject": "Test message!",
-  "content": [
-   {
-    type: "text/plain",
-    value: "Test message"
-   },
-   {
-    type: "text/html",
-    value: "<h1>Test message!</h1>"
-   }
-  ]
- }
- const { data } = await useFetch("/api/sendgrid", {
-  method: "POST",
-  body: msg
- });
-  console.log(data.value);
+<style>
+.page-enter-active,
+.page-leave-active {
+transition: all 0.3s;
 }
-</script>
+.page-enter-from,
+.page-leave-to {
+opacity: 0;
+filter: blur(1rem);
+}
+</style>

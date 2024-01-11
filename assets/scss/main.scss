@@ -1,0 +1,23 @@
+/* Import the tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    /* Set global styles */
+    html {
+        scroll-behavior: smooth;
+    }
+	body {
+		.icon.icon-stroke,
+        .icon.icon-stroke * {
+            fill: none !important;
+        }
+        .icon.icon-fill,
+        .icon.icon-fill * {
+            stroke: none !important;
+        }
+        .nuxt-icon svg {
+            margin-bottom: 0px!important;
+        }
+	}
+}
