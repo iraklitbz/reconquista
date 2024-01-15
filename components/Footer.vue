@@ -1,4 +1,31 @@
 <script setup>
+const navbar = ref([
+    {
+        name: 'Inicio',
+        url: '/'
+    },
+    {
+        name: 'Sobre nosotros',
+        url: '/sobre-nosotros'
+    },
+    {
+        name: 'Blog',
+        url: '/blog'
+    },
+    {
+        name: 'Contacto',
+        url: '/contacto'
+    },
+    {
+        name: 'Galleria',
+        url: '/galleria'
+    },
+    {
+        name: 'Revistas',
+        url: '/revistas'
+    }
+
+])
 </script>
 <template>
           <!-- Footer -->
@@ -19,11 +46,11 @@
               </h3>
               <div class="hidden lg:block">
                 <!-- Call to action button for large screens -->
-                <a
-                  href="#"
+                <nuxt-link
+                  to="/hazte-socio"
                   class="mt-12 bg-white hover:bg-sky-50 text-slate-700 inline-flex items-center rounded-full gap-2.5 justify-center px-7 py-3 text-md font-semibold leading-none outline-offset-2 transition-all duration-200 ease-in-out active:transition-none"
                 >
-                  Book a call
+                  Hazte socio! 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -36,7 +63,7 @@
                       clip-rule="evenodd"
                     />
                   </svg>
-                </a>
+                </nuxt-link>
               </div>
             </div>
             <div
@@ -50,11 +77,11 @@
               </p>
 
               <!-- Call to action button for small screens -->
-              <a
-                href="#"
+              <nuxt-link
+                to="/hazte-socio"
                 class="mt-10 inline-flex items-center justify-center gap-x-2.5 rounded-full bg-white py-3 px-7 text-md font-semibold leading-none text-slate-700 duration-200 ease-in-out hover:bg-sky-50 lg:hidden"
               >
-                Book a call
+                Hazte socio! 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
@@ -67,7 +94,7 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-              </a>
+              </nuxt-link>
 
               <!-- Social links -->
               <div
@@ -222,41 +249,19 @@
           <div class="flex flex-col items-center justify-between md:flex-row">
             <!-- Site links -->
             <div class="flex items-center gap-6">
-              <a
-                href="index.html"
+              <nuxt-link
+                v-for="item in navbar"
+                :key="item.name"
+                :to="item.url"
                 class="text-base font-medium duration-200 ease-in-out text-slate-100 hover:text-white"
               >
-                Home
-              </a>
-              <a
-                href="about.html"
-                class="text-base font-medium duration-200 ease-in-out text-slate-100 hover:text-white"
-              >
-                About
-              </a>
-              <a
-                href="work.html"
-                class="text-base font-medium duration-200 ease-in-out text-slate-100 hover:text-white"
-              >
-                Work
-              </a>
-              <a
-                href="blog.html"
-                class="text-base font-medium duration-200 ease-in-out text-slate-100 hover:text-white"
-              >
-                Blog
-              </a>
-              <a
-                href="contact.html"
-                class="text-base font-medium duration-200 ease-in-out text-slate-100 hover:text-white"
-              >
-                Contact
-              </a>
+                {{ item.name }}
+              </nuxt-link>
             </div>
 
             <!-- Copyright text -->
             <p class="mt-8 text-base text-slate-400/90 md:mt-0">
-              © 2023 Tailwind Awesome. All rights reserved.
+              © 2023 Reconquista Jadraque
             </p>
           </div>
         </div>

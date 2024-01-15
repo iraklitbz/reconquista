@@ -63,7 +63,7 @@
         class="relative h-96 w-full md:h-[600px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/3"
       >
         <image
-          src="/img/about-hero.jpg"
+          src="/img/jadraque.jpg"
           alt=""
           class="absolute inset-0 object-cover object-top w-full h-full"
         />

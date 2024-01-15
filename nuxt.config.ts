@@ -7,17 +7,32 @@ export default defineNuxtConfig({
       'nuxt-icons',
       '@nuxtjs/tailwindcss',
       '@nuxt/image',
-      'nuxt-graphql-client',
+      '@nuxtjs/apollo',
       '@nuxtjs/strapi'
+  ],
+  apollo: {
+    clients: {
+      default: {
+        httpEndpoint: 'https://cms.reconquistajadraque.es/graphql'
+      }
+    },
+  },
+  components: [
+    '~/components',
+    '~/components/Menu'
   ],
   tailwindcss: {
     exposeConfig: true,
     cssPath: '~/assets/scss/main.scss'
   },
+  routeRules: {
+    '/blog': { redirect: '/blog/1' }
+  },
   runtimeConfig: {
     RESEND_API_KEY: process.env.RESEND_API_KEY,
     public: {
-      version
+      version,
+      CMS_URL: process.env.CMS_URL
     }
   }
 })
