@@ -19,7 +19,8 @@ export default defineNuxtConfig({
   },
   components: [
     '~/components',
-    '~/components/Menu'
+    '~/components/Menu',
+    '~/components/ArticleBody',
   ],
   tailwindcss: {
     exposeConfig: true,

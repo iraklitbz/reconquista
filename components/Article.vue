@@ -46,7 +46,7 @@ const handleDate = (date) => {
          >
            <nuxt-link
                 v-if="entrada.attributes.categoria"
-                to="#0"
+                :to="`/blog/articulo/${entrada.attributes.slug}`"
                 class="relative z-10 flex items-center gap-2.5 text-md text-sky-700 transition duration-200 ease-in-out hover:text-sky-600"
            >
                 <nuxt-icon
