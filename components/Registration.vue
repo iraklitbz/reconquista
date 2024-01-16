@@ -87,7 +87,6 @@
     ])
     
     const HandleSendEmail = async () => {
-        console.log(userModel.value);
         loading.value = true;
         let msg = {
             from: 'web@reconquistajadraque.es',

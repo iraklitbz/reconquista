@@ -33,7 +33,7 @@ const parrafs = ref([
 
               <div class="mt-12 aspect-w-3 aspect-h-2 sm:mt-16">
                 <img
-                  src="./images/contact.jpg"
+                  src="/img/jadraque.jpg"
                   alt=""
                   class="object-cover w-full h-full rounded-3xl xl:left-16"
                 />
