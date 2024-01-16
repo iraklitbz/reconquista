@@ -6,6 +6,15 @@ export const dataQueryEntrada = gql`
               titulo,
               slug,
               fecha,
+              video,
+              galeria{
+                data {
+                  attributes {
+                    url,
+                    formats
+                  }
+                }
+              },
               destacado {
                 data {
                     attributes {

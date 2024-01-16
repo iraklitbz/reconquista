@@ -5,7 +5,6 @@ const props = defineProps({
         default: () => []
     }
 })
-console.log(props.articulo)
 </script>
 <template>
     <div

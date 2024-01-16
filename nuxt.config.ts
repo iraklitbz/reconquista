@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     '~/components',
     '~/components/Menu',
     '~/components/ArticleBody',
+    '~/components/Gallery'
   ],
   tailwindcss: {
     exposeConfig: true,

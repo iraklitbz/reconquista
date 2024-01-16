@@ -31,7 +31,7 @@ const formatContent = (parrafs) => {
     <div
     >
         <p
-            class="text-left text-slate-900 font-normal font-body mb-5"
+            class="text-left text-slate-600 font-normal text-lg mb-5"
             v-html="formatContent(props.parrafs)"
         >
         </p>

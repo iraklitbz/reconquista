@@ -10,11 +10,11 @@ const navbar = ref([
     },
     {
         name: 'Blog',
-        url: '/blog'
+        url: '/blog/1'
     },
     {
-        name: 'Galleria',
-        url: '/galleria'
+        name: 'Galeria',
+        url: '/galeria'
     },
     {
         name: 'Revistas',
@@ -30,7 +30,7 @@ const navbar = ref([
 <template>
      <nav class="relative z-50 flex items-center justify-between w-full">
           <!-- Logo -->
-          <div class="flex items-center shrink-0">
+          <!-- <div class="flex items-center shrink-0">
             <a
               href="index.html"
               aria-label="Home"
@@ -47,7 +47,7 @@ const navbar = ref([
                 class="hidden w-auto h-8 md:block lg:hidden"
               />
             </a>
-          </div>
+          </div> -->
 
           <!-- Desktop navigation links -->
           <div class="items-center hidden md:flex md:space-x-6 lg:space-x-8">

@@ -21,6 +21,7 @@
         >
         <!-- Article header -->
           <header class="relative bg-slate-50 py-10 sm:pt-16">
+            <div class="absolute inset-x-0 bottom-0 bg-white h-1/4"></div>
             <div
               class="relative max-w-6xl px-4 mx-auto text-center sm:px-6 lg:px-8"
             >
@@ -65,13 +66,7 @@
                       />
                   </figure>
                   
-                  <div
-                    class="inset-0 rounded-3xl ring-1 ring-inset ring-slate-900/10"
-                  >
-                    <ArticleBody 
-                        :articulo="articulo.attributes.contenido"
-                    />
-                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -79,7 +74,22 @@
 
           <div class="px-4 bg-white sm:px-6 lg:px-8">
             <!-- Article body -->
-            <div class="max-w-2xl mx-auto prose prose-lg"></div>
+            <article
+              class="max-w-2xl mx-auto prose prose-lg"
+            >
+              <ArticleBody 
+                  :articulo="articulo.attributes.contenido"
+              />
+              <Video 
+                v-if="articulo.attributes.video"
+                :video="articulo.attributes.video"
+              />
+              <MiniGallery 
+                v-if="articulo.attributes.galeria.data.length > 0"
+                class="mt-10"
+                :galleries="articulo.attributes.galeria.data"
+              />
+            </article>
 
             <!-- Article footer -->
             <footer class="max-w-2xl mx-auto">

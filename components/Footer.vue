@@ -10,15 +10,15 @@ const navbar = ref([
     },
     {
         name: 'Blog',
-        url: '/blog'
+        url: '/blog/1'
     },
     {
         name: 'Contacto',
         url: '/contacto'
     },
     {
-        name: 'Galleria',
-        url: '/galleria'
+        name: 'Galeria',
+        url: '/galeria'
     },
     {
         name: 'Revistas',
