@@ -64,7 +64,7 @@ const navbar = ref([
           <div class="flex items-center">
             <!-- Call to action -->
             <nuxt-link
-              class="text-slate-900 shadow-sm shadow-sky-100/50 ring-1 ring-slate-100 hover:bg-slate-200/60 hover:shadow-sky-100/50 bg-slate-100/80 inline-flex items-center rounded-full gap-2.5 justify-center px-7 py-3 text-md font-semibold leading-none outline-offset-2 transition-all duration-200 ease-in-out active:transition-none"
+              class="text-slate-900 registraionButton shadow-sm shadow-sky-100/50 ring-1 ring-slate-100 hover:bg-slate-200/60 hover:shadow-sky-100/50 bg-slate-100/80 inline-flex items-center rounded-full gap-2.5 justify-center px-7 py-3 text-md font-semibold leading-none outline-offset-2 transition-all duration-200 ease-in-out active:transition-none"
               to="/hazte-socio"
             >
               Hazte socio!
@@ -78,8 +78,14 @@ const navbar = ref([
         </nav>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
    .router-link-exact-active {
         @apply after:opacity-100;
+   }
+   .registraionButton.router-link-exact-active {
+        @apply bg-blue-100;
+        &::after {
+            display: none;
+        }
    }
 </style>
