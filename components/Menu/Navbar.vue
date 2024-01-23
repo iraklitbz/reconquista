@@ -77,3 +77,9 @@ const navbar = ref([
           </div>
         </nav>
 </template>
+
+<style scoped>
+   .router-link-exact-active {
+        @apply after:opacity-100;
+   }
+</style>

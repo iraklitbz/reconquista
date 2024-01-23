@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   apollo: {
     clients: {
       default: {
-        httpEndpoint: 'https://cms.reconquistajadraque.es/graphql'
+        httpEndpoint: process.env.GQL_HOST || '/graphql'
       }
     },
   },
