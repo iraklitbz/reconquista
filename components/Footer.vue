@@ -79,7 +79,7 @@ const navbar = ref([
               <!-- Call to action button for small screens -->
               <nuxt-link
                 to="/hazte-socio"
-                class="mt-10 inline-flex items-center justify-center gap-x-2.5 rounded-full bg-white py-3 px-7 text-md font-semibold leading-none text-slate-700 duration-200 ease-in-out hover:bg-sky-50 lg:hidden"
+                class="font-gothic mt-10 inline-flex items-center justify-center gap-x-2.5 rounded-full bg-white py-3 px-7 text-xl font-semibold leading-none text-slate-700 duration-200 ease-in-out hover:bg-sky-50 lg:hidden"
               >
                 Hazte socio! 
                 <svg
@@ -267,3 +267,11 @@ const navbar = ref([
         </div>
       </footer>
 </template>
+
+<style lang="scss" scoped>
+   .font-gothic {
+        font-family: "ferryman", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+   }
+</style>
