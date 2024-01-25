@@ -59,7 +59,7 @@ const handleDate = (date) => {
            </nuxt-link>
            <div class="flex-1">
              <h3
-               class="mt-4 text-xl font-medium leading-normal transition duration-200 ease-in-out font-display text-slate-900 decoration-slate-400 group-hover:text-sky-900"
+               class="mt-4 text-2xl font-medium leading-normal transition duration-200 ease-in-out font-display text-slate-900 decoration-slate-400 group-hover:text-sky-900"
              >
                 <nuxt-link 
                     :to="`/blog/articulo/${entrada.attributes.slug}`"

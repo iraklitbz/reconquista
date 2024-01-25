@@ -45,7 +45,7 @@ const CMS_URL = config.public.CMS_URL
                         <!-- Floating handwritten text with arrow -->
                         <div class="absolute hidden -left-48 -top-12 lg:flex xl:-left-72">
                         <span
-                            class="inline-block max-w-[175px] -rotate-12 transform font-writing text-2xl text-slate-600"
+                            class="handwriting inline-block max-w-[175px] -rotate-12 transform font-writing text-2xl text-slate-600"
                         >
                             Rellana el formulario
                         </span>

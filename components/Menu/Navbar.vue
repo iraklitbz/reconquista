@@ -55,7 +55,7 @@ const navbar = ref([
                 v-for="item in navbar"
                 :key="item.name"
                 :to="item.url"
-                class="relative duration-200 after:absolute after:left-1/2 after:-bottom-2.5 after:h-0.5 after:w-4 after:-translate-x-1/2 after:rounded-full after:bg-slate-900 after:opacity-0 after:content-[&quot;&quot;] font-medium text-slate-700 hover:text-slate-900 hover:after:opacity-25"
+                class="font-gothic relative duration-200 after:absolute after:left-1/2 after:-bottom-2.5 after:h-0.5 after:w-4 text-xl after:-translate-x-1/2 after:rounded-full after:bg-slate-900 after:opacity-0 after:content-[&quot;&quot;] font-medium text-slate-700 hover:text-slate-900 hover:after:opacity-25"
             >
                 {{ item.name }}
             </nuxt-link>
@@ -64,7 +64,7 @@ const navbar = ref([
           <div class="flex items-center">
             <!-- Call to action -->
             <nuxt-link
-              class="text-slate-900 registraionButton shadow-sm shadow-sky-100/50 ring-1 ring-slate-100 hover:bg-slate-200/60 hover:shadow-sky-100/50 bg-slate-100/80 inline-flex items-center rounded-full gap-2.5 justify-center px-7 py-3 text-md font-semibold leading-none outline-offset-2 transition-all duration-200 ease-in-out active:transition-none"
+              class="text-slate-900 font-gothic registraionButton shadow-sm shadow-sky-100/50 ring-1 ring-slate-100 hover:bg-slate-200/60 hover:shadow-sky-100/50 bg-slate-100/80 inline-flex items-center rounded-full gap-2.5 justify-center px-7 py-3 text-xl font-semibold leading-none outline-offset-2 transition-all duration-200 ease-in-out active:transition-none"
               to="/hazte-socio"
             >
               Hazte socio!
@@ -87,5 +87,10 @@ const navbar = ref([
         &::after {
             display: none;
         }
+   }
+   .font-gothic {
+        font-family: "ferryman", sans-serif;
+        font-weight: 500;
+        font-style: normal;
    }
 </style>

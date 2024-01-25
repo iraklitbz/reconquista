@@ -2,13 +2,24 @@ import { version } from './package.json'
 export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
+    head: {
+      link: [
+        { rel: 'stylesheet', href: 'https://use.typekit.net/dlq6ymk.css' }
+      ]
+    }
   },
   modules: [
       'nuxt-icons',
       '@nuxtjs/tailwindcss',
       '@nuxt/image',
       '@nuxtjs/apollo',
-      '@nuxtjs/strapi'
+      '@nuxtjs/strapi',
+      ['@nuxtjs/google-fonts', {
+        families: {
+          'Open Sans': [400, 700],
+          'Grape Nuts': [400],
+        }
+      }]
   ],
   apollo: {
     clients: {

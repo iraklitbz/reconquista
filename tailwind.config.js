@@ -23,6 +23,9 @@ module.exports = {
           'primary-lighter': '#f7efe2',
           'primary-dark': '#c7943a',
           'primary-darker': '#9a722c',
+          'instagram': '#e4405f',
+          'facebook': '#3b5998',
+          'whatsapp': '#25d366'
         }
       }
     },

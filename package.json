@@ -25,6 +25,7 @@
     "@nuxt/image": "^1.0.0",
     "@nuxtjs/strapi": "^1.9.3",
     "nuxt-graphql-client": "^0.2.31",
-    "resend": "^2.1.0"
+    "resend": "^2.1.0",
+    "@nuxtjs/google-fonts": "^3.0.1"
   }
 }

@@ -107,7 +107,7 @@
                 class="relative mt-3 flex h-fit items-center font-writing text-2xl tracking-wide text-slate-600 sm:top-6 sm:left-14 sm:mt-0 sm:block sm:text-[27px] md:left-20"
                 >
                 <span
-                    class="inline-block w-52 max-w-[240px] transform sm:w-auto sm:-rotate-12"
+                    class="handwriting inline-block w-52 max-w-[240px] transform sm:w-auto sm:-rotate-12"
                 >
                     Hasta aqui llegan todas las revistas de la asociación
                 </span>
