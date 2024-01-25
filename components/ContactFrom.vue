@@ -45,7 +45,7 @@
         loading.value = true;
         let msg = {
             from: 'web@reconquistajadraque.es',
-            to: 'iraklitbz@gmail.com',
+            to: 'asoc.reconquista.jadraque@gmail.com',
             subject:  `Mensaje de ${userModel.value.name} ${userModel.value.surname}`,
             html:  `<p>${userModel.value.name} ${userModel.value.surname} con el email: ${userModel.value.email}, ha mandado una pregunta mediante el formulario de la web:</p><br>
                     <p>Mensaje: <b>${userModel.value.textarea}</b></p>

@@ -108,7 +108,7 @@
           loading.value = true;
           let msg = {
               from: 'web@reconquistajadraque.es',
-              to: 'iraklitbz@gmail.com',
+              to: 'asoc.reconquista.jadraque@gmail.com',
               subject:  `Solicitud socio de ${userModel.value.name} ${userModel.value.surname}`,
               html:  `<p>${userModel.value.name} ${userModel.value.surname} quiere formar parte de la reconquista! estos son sus datos:</p><br>
                       <ul>
