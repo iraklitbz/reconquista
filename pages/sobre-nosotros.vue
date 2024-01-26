@@ -1,4 +1,5 @@
 <script setup>
+    import { capitalLetter } from '~/utils/capital-util'
     import { dataQueryJuntas } from '~/graphql/queries/juntas.query.gql'
     import { apiCall } from '~/composables/apiCall'
     const data = await apiCall(dataQueryJuntas, '', {})
@@ -9,11 +10,11 @@
 </script>
 <template>
     <section class="pb-16 overflow-hidden bg-white sm:pb-20 lg:pb-28">
-      <div class="relative block w-full overflow-hidden aspect-w-16 aspect-h-9 md:aspect-w-5 md:aspect-h-2 mb-20">
+      <div class="relative block w-full overflow-hidden aspect-w-16 aspect-h-9 md:aspect-w-5 md:aspect-h-2 mb-10 md:mb-20 h-[300px] md:h-auto">
         <img 
             :src="CMS_URL + '/uploads/about_357fb4d989.webp'" 
             alt="San Jaun Jadraque" 
-            class="object-cover w-full bg-slate-100"
+            class="object-cover h-full w-full bg-slate-100"
         >
       </div>
       <div class="grid max-w-lg px-5 mx-auto sm:max-w-2xl sm:px-6 lg:max-w-6xl lg:grid-cols-10 lg:px-8 xl:px-12">
@@ -82,14 +83,9 @@
 
           <!-- Content -->
           <div class="mt-6 prose sm:prose-lg sm:mt-8">
-            <p>
-              I collaborated with Horizons in Perspective, a prestigious
-              bi-annual journal focused on the frontiers of innovation and
-              creativity, to elevate their brand and digital presence. My
-              involvement encompassed crafting a fresh and modern branding
-              identity, designing an immersive and user-friendly website
-              experience, and developing a visually appealing product design for
-              their bi-annual journal publication.
+            <p
+              v-html="capitalLetter('I collaborated with Horizons in Perspective, a prestigious bi-annual journal focused on the frontiers of innovation and creativity, to elevate their brand and digital presence. My involvement encompassed crafting a fresh and modern branding identity, designing an immersive and user-friendly website experience, and developing a visually appealing product design for their bi-annual journal publication.')"
+            >
             </p>
             <p
                 class="mt-3"

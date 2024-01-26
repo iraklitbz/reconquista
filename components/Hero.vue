@@ -1,9 +1,10 @@
 <script setup>
+import { capitalLetter } from '~/utils/capital-util'
 </script>
 <template>
     <section class="relative bg-slate-50/50">
       <!-- Background gradient -->
-      <image
+      <img
         src="/img/about-hero-bg.svg"
         alt=""
         class="absolute inset-0 object-cover object-left w-full h-full lg:w-2/3"
@@ -38,13 +39,10 @@
             </span>
             de jadraque
           </h1>
-          <p class="mt-8 text-lg leading-8 text-slate-700">
-            Pumpkin seasonal rich froth decaffeinated trifecta organic blue
-            panna doppio. Body a whipped lungo variety spice seasonal body press
-            mountain con macchiato. Medium coffee single white to caramelization
-            siphon con siphon id as con go single. So ristretto pumpkin affogato
-            cinnamon breve turkish organic. Lait black kopi dripper spice lait
-            cultivar robusta panna whipped and sit aromatic sugar.
+          <p 
+            class="mt-8 text-lg leading-8 text-slate-700"
+            v-html=" capitalLetter('Pumpkin seasonal rich froth decaffeinated trifecta organic blue panna doppio. Body a whipped lungo variety spice seasonal body press mountain con macchiato. Medium coffee single white to caramelization siphon con siphon id as con go single. So ristretto pumpkin affogato cinnamon breve turkish organic. Lait black kopi dripper spice lait cultivar robusta panna whipped and sit aromatic sugar.')"
+          >
           </p>
           <p class="mt-6 text-lg leading-8 text-slate-700">
             And café frappuccino extraction filter froth sugar siphon coffee

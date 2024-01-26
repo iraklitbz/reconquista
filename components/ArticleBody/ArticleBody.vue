@@ -10,6 +10,10 @@ const props = defineProps({
     <div
         v-for="(content, index) in props.articulo"
     >
+        <CapitalLetter 
+            v-if="content.type === 'paragraph' && index === 0"
+            :parrafs="content.children[0]"
+        />
         <Parraf 
             v-if="content.type === 'paragraph'"
             :parrafs="content.children"

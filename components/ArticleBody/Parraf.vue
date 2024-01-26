@@ -4,7 +4,8 @@ const props = defineProps({
         type: Array,
         default: () => []
     }
-})
+});
+
 const formatContent = (parrafs) => {
     let formattedContent = '';
     parrafs.forEach(parraf => {
@@ -25,11 +26,11 @@ const formatContent = (parrafs) => {
         }
     });
     return formattedContent;
-}
+};
 </script>
+
 <template>
-    <div
-    >
+    <div>
         <p
             class="text-left text-slate-600 font-normal text-lg mb-5"
             v-html="formatContent(props.parrafs)"
@@ -37,13 +38,3 @@ const formatContent = (parrafs) => {
         </p>
     </div>
 </template>
-
-0: {type: 'text', text: 'Al contrario del '}
-1: {type: 'link', url: 'https://www.google.com/', children: Array(1)}
-2: {type: 'text', text: ' popular, el '}
-3: {type: 'text', text: 'texto', bold: true}
-4: {type: 'text', text: ' de '}
-5: {type: 'text', text: 'Lorem Ipsum no es simplemente', italic: true}
-6: {type: 'text', text: ' texto aleatorio. '}
-7: {type: 'text', text: 'Tiene sus raices en una', underline: true}
-8: {type: 'text', text: ' pieza cl´sica de la literatura del Latin, que dat…amet..", viene de una linea en la sección 1.10.32'}

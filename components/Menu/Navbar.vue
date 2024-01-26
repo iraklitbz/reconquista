@@ -30,24 +30,18 @@ const navbar = ref([
 <template>
      <nav class="relative z-50 flex items-center justify-between w-full">
           <!-- Logo -->
-          <!-- <div class="flex items-center shrink-0">
-            <a
-              href="index.html"
-              aria-label="Home"
-              class="flex items-center flex-shrink-0"
+          <div class="flex items-center shrink-0">
+            <nuxt-link
+              to="/"
+              aria-label="ir a la pagina de inicio"
+              class="font-gothic relative flex flex-col items-center text-3xl font-semibold leading-none text-slate-900"
             >
-              <img
-                src="./images/logo.png"
-                alt=""
-                class="w-auto h-8 sm:h-9 md:hidden lg:block lg:h-10"
-              />
-              <img
-                src="./images/logo-icon.png"
-                alt=""
-                class="hidden w-auto h-8 md:block lg:hidden"
-              />
-            </a>
-          </div> -->
+              Reconquista
+              <span class="handwriting text-2xl">
+                Jadraque!
+              </span>
+            </nuxt-link>
+          </div>
 
           <!-- Desktop navigation links -->
           <div class="items-center hidden md:flex md:space-x-6 lg:space-x-8">
@@ -64,7 +58,7 @@ const navbar = ref([
           <div class="flex items-center">
             <!-- Call to action -->
             <nuxt-link
-              class="text-slate-900 font-gothic registraionButton shadow-sm shadow-sky-100/50 ring-1 ring-slate-100 hover:bg-slate-200/60 hover:shadow-sky-100/50 bg-slate-100/80 inline-flex items-center rounded-full gap-2.5 justify-center px-7 py-3 text-xl font-semibold leading-none outline-offset-2 transition-all duration-200 ease-in-out active:transition-none"
+              class="text-slate-900 font-gothic registraionButton shadow-sm shadow-sky-100/50 ring-1 ring-slate-100 hover:bg-slate-200/60 hover:shadow-sky-100/50 bg-slate-100/80 inline-flex items-center rounded-full gap-2.5 justify-center px-4 md:px-7 py-3 text-lg md:text-xl font-semibold leading-none outline-offset-2 transition-all duration-200 ease-in-out active:transition-none"
               to="/hazte-socio"
             >
               Hazte socio!
