@@ -84,7 +84,7 @@
           <!-- Content -->
           <div class="mt-6 prose sm:prose-lg sm:mt-8">
             <p
-              v-html="capitalLetter('I collaborated with Horizons in Perspective, a prestigious bi-annual journal focused on the frontiers of innovation and creativity, to elevate their brand and digital presence. My involvement encompassed crafting a fresh and modern branding identity, designing an immersive and user-friendly website experience, and developing a visually appealing product design for their bi-annual journal publication.')"
+              v-html="capitalLetter('I collaborated with Horizons in Perspective, a prestigious bi-annual journal focused on the frontiers of innovation and creativity, to elevate their brand and digital presence. My involvement encompassed crafting a fresh and modern branding identity, designing an immersive and user-friendly website experience, and developing a visually appealing product design for their bi-annual journal publication.', CMS_URL)"
             >
             </p>
             <p

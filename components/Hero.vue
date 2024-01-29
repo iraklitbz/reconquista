@@ -1,5 +1,7 @@
 <script setup>
 import { capitalLetter } from '~/utils/capital-util'
+const config = useRuntimeConfig()
+const CMS_URL = config.public.CMS_URL
 </script>
 <template>
     <section class="relative bg-slate-50/50">
@@ -41,7 +43,7 @@ import { capitalLetter } from '~/utils/capital-util'
           </h1>
           <p 
             class="mt-8 text-lg leading-8 text-slate-700"
-            v-html=" capitalLetter('Pumpkin seasonal rich froth decaffeinated trifecta organic blue panna doppio. Body a whipped lungo variety spice seasonal body press mountain con macchiato. Medium coffee single white to caramelization siphon con siphon id as con go single. So ristretto pumpkin affogato cinnamon breve turkish organic. Lait black kopi dripper spice lait cultivar robusta panna whipped and sit aromatic sugar.')"
+            v-html=" capitalLetter('Pumpkin seasonal rich froth decaffeinated trifecta organic blue panna doppio. Body a whipped lungo variety spice seasonal body press mountain con macchiato. Medium coffee single white to caramelization siphon con siphon id as con go single. So ristretto pumpkin affogato cinnamon breve turkish organic. Lait black kopi dripper spice lait cultivar robusta panna whipped and sit aromatic sugar.', CMS_URL)"
           >
           </p>
           <p class="mt-6 text-lg leading-8 text-slate-700">
