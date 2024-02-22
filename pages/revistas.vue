@@ -46,7 +46,7 @@
                     </defs>
                     </svg>
 
-                    <span class="relative text-sky-700">revistas</span>
+                    <span class="relative">revistas</span>
                 </span>
                 de nuestra asociación
                 </h2>

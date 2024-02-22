@@ -2,6 +2,8 @@
     const loading = ref(false);
     const errorOnSendStarpi = ref(false);
     const error = ref(false);
+    const errorBankAccount = ref(false);
+    const errorBankAccountMessage = ref("")
     const userModel = ref({
         name: "",
         surname: "",
@@ -88,69 +90,98 @@
     ])
     
     const HandleSendEmail = async () => {
-      errorOnSendStarpi.value = false
-      const variables = {
-        nombre: userModel.value.name,
-        apellidos: userModel.value.surname,
-        DNI: userModel.value.dni,
-        direccion: userModel.value.direccion,
-        postal: userModel.value.cp,
-        localidad: userModel.value.localidad,
-        banco: userModel.value.banco,
-        cuenta: userModel.value.cuenta,
-        telefono: userModel.value.phone,
-        email: userModel.value.email
-      }
-      const sendData = await createSocio(variables).catch((err) => {
-          errorOnSendStarpi.value = true
-      })
-      if(sendData) {
-          loading.value = true;
-          let msg = {
-              from: 'web@reconquistajadraque.es',
-              to: 'asoc.reconquista.jadraque@gmail.com',
-              subject:  `Solicitud socio de ${userModel.value.name} ${userModel.value.surname}`,
-              html:  `<p>${userModel.value.name} ${userModel.value.surname} quiere formar parte de la reconquista! estos son sus datos:</p><br>
-                      <ul>
-                          <li>Nombre: <b>${userModel.value.name}</b></li>
-                          <li>Apellidos: <b>${userModel.value.surname}</b></li>
-                          <li>DNI: <b>${userModel.value.dni}</b></li>
-                          <li>Dirección: <b>${userModel.value.direccion}</b></li>
-                          <li>Código postal: <b>${userModel.value.cp}</b></li>
-                          <li>Localidad: <b>${userModel.value.localidad}</b></li>
-                          <li>Nombre de banco: <b>${userModel.value.banco}</b></li>
-                          <li>Número de cuenta: <b>${userModel.value.cuenta}</b></li>
-                          <li>Teléfono móvil: <b>${userModel.value.phone}</b></li>
-                          <li>Correo electrónico: <b>${userModel.value.email}</b></li>
-                      </ul>
-              `
-          }
-          const { data } = await useFetch("/api/send", {
-              method: "POST",
-              body: msg
-          });
-          if(!data.value.error) {
-              loading.value = false;
-              error.value = false
-              userModel.value = {
-                  name: "",
-                  surname: "",
-                  dni: "",
-                  direccion: "",
-                  cp: "",
-                  localidad: "",
-                  banco: "",
-                  cuenta: "",
-                  phone: "",
-                  email: ""
-              }
-              navigateTo("/gracias")
-          } else {
-              loading.value = false;
-              error.value = true
-          }
+      checkBankAccount()
+      if (!errorBankAccount.value) {
+          const variables = {
+          nombre: userModel.value.name,
+          apellidos: userModel.value.surname,
+          DNI: userModel.value.dni,
+          direccion: userModel.value.direccion,
+          postal: userModel.value.cp,
+          localidad: userModel.value.localidad,
+          banco: userModel.value.banco,
+          cuenta: userModel.value.cuenta,
+          telefono: userModel.value.phone,
+          email: userModel.value.email
+        }
+        const sendData = await createSocio(variables).catch((err) => {
+            errorOnSendStarpi.value = true
+        })
+        if(sendData) {
+            loading.value = true;
+            let msg = {
+                from: 'web@reconquistajadraque.es',
+                to: 'asoc.reconquista.jadraque@gmail.com',
+                subject:  `Solicitud socio de ${userModel.value.name} ${userModel.value.surname}`,
+                html:  `<p>${userModel.value.name} ${userModel.value.surname} quiere formar parte de la reconquista! estos son sus datos:</p><br>
+                        <ul>
+                            <li>Nombre: <b>${userModel.value.name}</b></li>
+                            <li>Apellidos: <b>${userModel.value.surname}</b></li>
+                            <li>DNI: <b>${userModel.value.dni}</b></li>
+                            <li>Dirección: <b>${userModel.value.direccion}</b></li>
+                            <li>Código postal: <b>${userModel.value.cp}</b></li>
+                            <li>Localidad: <b>${userModel.value.localidad}</b></li>
+                            <li>Nombre de banco: <b>${userModel.value.banco}</b></li>
+                            <li>Número de cuenta: <b>${userModel.value.cuenta}</b></li>
+                            <li>Teléfono móvil: <b>${userModel.value.phone}</b></li>
+                            <li>Correo electrónico: <b>${userModel.value.email}</b></li>
+                        </ul>
+                `
+            }
+            const { data } = await useFetch("/api/send", {
+                method: "POST",
+                body: msg
+            });
+            if(!data.value.error) {
+                loading.value = false;
+                error.value = false
+                userModel.value = {
+                    name: "",
+                    surname: "",
+                    dni: "",
+                    direccion: "",
+                    cp: "",
+                    localidad: "",
+                    banco: "",
+                    cuenta: "",
+                    phone: "",
+                    email: ""
+                }
+                navigateTo("/gracias")
+            } else {
+                loading.value = false;
+                error.value = true
+            }
+        }
       }
     }
+    const checkBankAccount = () => {
+      errorBankAccount.value = false;
+      let value = userModel.value.cuenta.toUpperCase();
+      value = value.replace(/[^A-Z0-9]/g, '');
+
+      // Check if it starts with 'ES'
+      if (!/^ES/.test(value)) {
+        errorBankAccount.value = true;
+        errorBankAccountMessage.value = 'La cuenta bancaria debe comenzar con "ES".';
+        return;
+      }
+
+      // Check if it has exactly 24 characters
+      if (value.length !== 24) {
+        errorBankAccount.value = true;
+        errorBankAccountMessage.value = 'La cuenta bancaria debe tener exactamente 24 caracteres';
+        return;
+      }
+
+      // Check if the remaining characters are numeric
+      if (!/^\d{22}$/.test(value.slice(2))) {
+        errorBankAccount.value = true;
+        errorBankAccountMessage.value = 'Los caracteres después de "ES" deben ser todos números.';
+        return;
+      }
+      userModel.value.cuenta = value;
+    };
 </script>
 <template>
       <section>
@@ -209,10 +240,14 @@
                     </div>
                   </button>
                   <p
-                    v-if="error"
+                    v-if="error || errorBankAccount"
                     class="text-red-500 text-center mt-2"
                   >
-                    Ha ocurrido un error, por favor, inténtalo de nuevo más tarde.
+                    {{
+                      error
+                        ? "Ha habido un error al enviar el formulario, por favor, inténtalo de nuevo."
+                        : errorBankAccountMessage
+                    }}
                   </p>
               </div>
 
